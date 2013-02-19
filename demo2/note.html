@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>笔记</title>
+</head>
+
+<body>
+<p>最后整理一下整个 Smarty 程序撰写步骤：<br />
+　　<br />
+　　Step 1. 加载 Smarty 模版引擎。<br />
+　　<br />
+　　Step 2. 建立 Smarty 对象。<br />
+　　<br />
+　　Step 3. 设定 Smarty 对象的参数。<br />
+　　<br />
+　　Step 4. 在程序中处理变量后，再用 Smarty 的 assign 方法将变量置入模版里。<br />
+　　<br />
+　　Step 5. 利用 Smarty 的 display 方法将网页秀出。</p>
+<p>&nbsp;</p>
+<p>上面我们也提到 main.php ，这是整个程序的主要核心，不论是常数定义、外部程序加载、共享变量建立等，都是在这里开始的。所以之后的模块都只要将这个档案包含进来就可以啦。因此在程序流程规划期间，就必须好好构思 main.php 中应该要放那些东西；当然利用 include 或 require 指令，把每个环节清楚分离是再好不过了。</p>
+<p>&nbsp;</p>
+<p><strong>从变量开始</strong></p>
+<p>1、<{$var}></p>
+<p>2、&lt;{ $var }&gt; //预设的标示符号跟变量之间可有空格或者换行</p>
+<p><strong>在 Smarty 里，变量预设是全域的</strong>，也就是说你只要指定一次就好了。指定两次以上的话，变量内容会以最后指定的为主。就算我们</p>
+<p>在主模版中加载了外部的子模版，子模版中同样的变量一样也会被替代，这样我们就不用再针对子模版再做一次解析的动作。</p>
+<p><br />
+<strong>而在 PHP 程序中，我们用 Smarty 的 assign 来将变量置放到模版中。</strong></p>
+
+</body>
+</html>
